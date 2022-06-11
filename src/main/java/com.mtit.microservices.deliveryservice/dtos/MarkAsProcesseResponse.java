@@ -1,17 +1,22 @@
 package com.mtit.microservices.deliveryservice.dtos;
 
-public class DeliveryProcesseResponse {
+public class MarkAsProcesseResponse {
 
-    private String foodId;
+    private String orderID;
     private String message;
+    private String status;
 
     public String getItemId() {
-        return foodId;
+        return orderID;
     }
 
     public void setItemId(String itemId) {
-        this.foodId = foodId;
+        this.orderID = orderID;
     }
+
+    public String getStatus() {return status;}
+
+    public void setStatus(String status) {this.status = status;}
 
     public String getMessage() {
         return message;
@@ -24,9 +29,11 @@ public class DeliveryProcesseResponse {
     @Override
     public String toString() {
         return "DeliveryResponse{" +
-                "foodId='" + foodId + '\'' +
+                "orderId='" + orderID + '\'' +
+                ", status='" + status + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
 
 }
+//orderID,status,message

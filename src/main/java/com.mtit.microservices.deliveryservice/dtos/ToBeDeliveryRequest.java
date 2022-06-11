@@ -2,40 +2,31 @@ package com.mtit.microservices.deliveryservice.dtos;
 
 public class ToBeDeliveryRequest {
 
-    private String foodName;
-    private String foodQty;
-    private float foodPrice;
+    private String date;
+    private String city;
 
-    public String getItemName() {
-        return foodName;
+    public String getDeliveryDate() {
+        return date;
     }
 
-    public void setItemName(String itemName) {
-        this.foodName = foodName;
+    public void setDeliveryDate(String DeliveryDate) {
+        this.date = date;
     }
 
-    public String getItemQty() {
-        return foodQty;
+    public String getCity() {
+        return city;
     }
 
-    public void setItemQty(String itemQty) {
-        this.foodQty = foodQty;
-    }
-
-    public float getItemPrice() {
-        return foodPrice;
-    }
-
-    public void setItemPrice(float itemPrice) {
-        this.foodPrice = foodPrice;
+    public void setCity(String City) {
+        this.city = city;
     }
 
     @Override
     public String toString() {
         return "DeliveryRequest{" +
-                "foodName='" + foodName + '\'' +
-                ", foodQty='" + foodQty + '\'' +
-                ", foodPrice=" + foodPrice +
+                "date='" + date + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }
+//date,city

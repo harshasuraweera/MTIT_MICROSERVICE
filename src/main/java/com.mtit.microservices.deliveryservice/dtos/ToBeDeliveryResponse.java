@@ -2,15 +2,15 @@ package com.mtit.microservices.deliveryservice.dtos;
 
 public class ToBeDeliveryResponse {
 
-    private String foodId;
+    private String deliveryId;
     private String message;
 
     public String getItemId() {
-        return foodId;
+        return deliveryId;
     }
 
     public void setItemId(String itemId) {
-        this.foodId = foodId;
+        this.deliveryId = deliveryId;
     }
 
     public String getMessage() {
@@ -24,8 +24,9 @@ public class ToBeDeliveryResponse {
     @Override
     public String toString() {
         return "DeliveryResponse{" +
-                "foodId='" + foodId + '\'' +
+                "deliveryId='" + deliveryId + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
 }
+//order table eke tiyena okkoma
