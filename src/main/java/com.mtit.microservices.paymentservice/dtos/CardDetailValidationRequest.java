@@ -2,17 +2,33 @@ package com.mtit.microservices.paymentservice.dtos;
 
 public class CardDetailValidationRequest {
 
+    private String recordId;
     private String cardNumber;
+    private String cardHolderName;
     private String month;
     private String year;
     private String cvv;
 
+    public String getrecordId() {
+        return recordId;
+    }
+
+    public void setrecordId(String recordId) {
+        this.recordId = recordId;
+    }
     public String getcardNumber() {
         return cardNumber;
     }
 
     public void setcardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
+    }
+    public String getcardHolderName() {
+        return cardHolderName;
+    }
+
+    public void setcardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
     }
 
     public String getmonth() {
@@ -43,10 +59,13 @@ public class CardDetailValidationRequest {
     @Override
     public String toString() {
         return "CardDetailValidationRequest{" +
+                "recordId='" + recordId + '\'' +
                 "cardNumber='" + cardNumber + '\'' +
+                "cardHolderName='" + cardHolderName + '\'' +
                 ", month='" + month + '\'' +
                 ", year='" + year + '\'' +
                 ", cvv=" + cvv +
                 '}';
     }
 }
+
