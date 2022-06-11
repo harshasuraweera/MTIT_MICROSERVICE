@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/toBeDelivered")
-public class FoodDeliveryController {
+@RequestMapping("/confirmDelivered")
+public class FoodDeliveryConfirmController {
     @PostMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    DeliveryResponse item(@RequestBody DeliveryRequest itemRequest){
+    DeliveryResponse item(@RequestBody DeliveryRequest DeliveryRequest){
 
-        System.out.println("Item Details: "+ itemRequest);
+        System.out.println("Item Details: "+ DeliveryRequest);
 
         var deliveryresponse = new DeliveryResponse();
         deliveryresponse.setItemId(UUID.randomUUID().toString());
