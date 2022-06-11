@@ -4,7 +4,7 @@ public class UpdateFoodRequest {
 
     private String foodName;
     private String foodStock;
-    private String foodBranch;
+    private String foodCategory;
     private int foodPrice;
 
 
@@ -24,14 +24,14 @@ public class UpdateFoodRequest {
         this.foodStock = foodStock;
     }
 
-    public String getFoodBranch() {
-        return foodBranch;
+    public String getFoodCategory() {
+        return foodCategory;
     }
 
-    public void setFoodBranch(String foodBranch) {
-        this.foodBranch = foodBranch;
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
     }
-    public float getFoodPrice() {
+    public String getFoodPrice() {
         return foodPrice;
     }
 
@@ -45,7 +45,7 @@ public class UpdateFoodRequest {
         return "AddFoodRequest{" +
                 "foodName='" + foodName + '\'' +
                 ", foodStock ='" + foodStock + '\'' +
-                ", foodBranch=" + foodBranch + '\'' +
+                ", foodCategory=" + foodCategory + '\'' +
                 ", foodPrice=" + foodPrice +
                 '}';
     }
