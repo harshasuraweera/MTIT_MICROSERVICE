@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/searchFood")
 public class SearchController {
 
-    @PostMapping(consumes = "application/json", produces = "application/json")
+    @GetMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
     SearchResponse item(@RequestBody SearchRequest searchRequest){
 
