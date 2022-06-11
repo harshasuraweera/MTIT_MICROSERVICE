@@ -15,7 +15,7 @@ public class DeleteFromCartRequest {
     @Override
     public String toString() {
         return "DeleteFromCartRequest{" +
-                "foodId='" + foodId + '\''+
+                "foodId='" + foodId + '\'' +
                 '}';
     }
 

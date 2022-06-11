@@ -10,9 +10,9 @@ public class UpdateCartQuantityController {
 
     @PutMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    UpdateCartQuantityResponse item(@RequestBody UpdateCartQuantityRequest updateCartQuantityRequest){
+    UpdateCartQuantityResponse item(@RequestBody UpdateCartQuantityRequest updateCartQuantityRequest) {
 
-        System.out.println("Search Results: "+ updateCartQuantityRequest); //return the postman send request data
+        System.out.println("Search Results: " + updateCartQuantityRequest); //return the postman send request data
 
         //search on the db and get the values and send to the response
 

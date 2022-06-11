@@ -10,9 +10,9 @@ public class SearchController {
 
     @GetMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    SearchResponse item(@RequestBody SearchRequest searchRequest){
+    SearchResponse item(@RequestBody SearchRequest searchRequest) {
 
-        System.out.println("Search Results: "+ searchRequest); //return the postman send request data
+        System.out.println("Search Results: " + searchRequest); //return the postman send request data
 
         //search on the db and get the values and send to the response
 

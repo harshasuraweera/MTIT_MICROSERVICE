@@ -10,9 +10,9 @@ public class DeleteFromCartController {
 
     @DeleteMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    DeleteFromCartResponse item(@RequestBody DeleteFromCartRequest deleteFromCartRequest){
+    DeleteFromCartResponse item(@RequestBody DeleteFromCartRequest deleteFromCartRequest) {
 
-        System.out.println("Search Results: "+ deleteFromCartRequest); //return the postman send request data
+        System.out.println("Search Results: " + deleteFromCartRequest); //return the postman send request data
 
         //search on the db and get the values and send to the response
 

@@ -4,7 +4,10 @@ public class DeleteFromCartResponse {
 
     private String foodId;
     private String statusMessage;
-    public void setFoodId(String foodId) { this.foodId = foodId; }
+
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
 
     public String getFoodId() {
         return foodId;

@@ -5,9 +5,18 @@ public class SearchResponse {
     private String foodName;
     private String foodPrice;
     private String stockAvailability;
-    public void setFoodName(String foodName) { this.foodName = foodName; }
-    public void setFoodPrice(String foodPrice) { this.foodPrice = foodPrice; }
-    public void setStockAvailability(String stockAvailability) { this.stockAvailability = stockAvailability;}
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setFoodPrice(String foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public void setStockAvailability(String stockAvailability) {
+        this.stockAvailability = stockAvailability;
+    }
 
     public String getFoodName() {
         return foodName;

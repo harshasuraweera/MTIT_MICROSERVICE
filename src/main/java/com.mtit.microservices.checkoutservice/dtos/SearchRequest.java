@@ -15,7 +15,7 @@ public class SearchRequest {
     @Override
     public String toString() {
         return "FoodSearchRequest{" +
-                "searchKeyword='" + searchKeyword + '\''+
+                "searchKeyword='" + searchKeyword + '\'' +
                 '}';
     }
 

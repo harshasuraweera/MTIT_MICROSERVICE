@@ -24,8 +24,8 @@ public class UpdateCartQuantityRequest {
     @Override
     public String toString() {
         return "UpdateCartQuantityRequest{" +
-                "foodId='" + foodId + '\''+
-                "newQuantity='" + newQuantity + '\''+
+                "foodId='" + foodId + '\'' +
+                "newQuantity='" + newQuantity + '\'' +
                 '}';
     }
 

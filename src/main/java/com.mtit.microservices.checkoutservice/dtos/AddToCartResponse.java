@@ -6,9 +6,18 @@ public class AddToCartResponse {
     private String foodPrice;
     private String quantity;
     private String totalPrice;
-    public void setFoodName(String foodName) { this.foodName = foodName; }
-    public void setFoodPrice(String foodPrice) { this.foodPrice = foodPrice; }
-    public void setQuantity(String quantity) { this.quantity = quantity;}
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setFoodPrice(String foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
 
     public String getFoodName() {
         return foodName;

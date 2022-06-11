@@ -8,9 +8,18 @@ public class UpdateCartQuantityResponse {
     private String totalPrice;
 
     private String foodPrice;
-    public void setFoodId(String foodId) { this.foodId = foodId; }
-    public void setOldQuantity(String oldQuantity) { this.oldQuantity = oldQuantity; }
-    public void setNewQuantity(String newQuantity) { this.newQuantity = newQuantity;}
+
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
+
+    public void setOldQuantity(String oldQuantity) {
+        this.oldQuantity = oldQuantity;
+    }
+
+    public void setNewQuantity(String newQuantity) {
+        this.newQuantity = newQuantity;
+    }
 
     public String getFoodId() {
         return foodId;

@@ -2,19 +2,29 @@ package com.mtit.microservices.checkoutservice.dtos;
 
 public class AddToCartRequest {
 
-    private String searchKeyword;
+    private String foodId;
     private String quantity;
 
-    public String getSearchKeyword() {
-        return searchKeyword;
+    private String customerId;
+
+    public String getFoodId() {
+        return foodId;
     }
 
-    public void setSearchKeyword(String searchKeyword) {
-        this.searchKeyword = searchKeyword;
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
     }
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getQuantity() {
@@ -24,8 +34,9 @@ public class AddToCartRequest {
     @Override
     public String toString() {
         return "AddToCartRequest{" +
-                "foodId='" + searchKeyword + '\''+
-                "quantity='" + quantity + '\''+
+                "foodId='" + foodId + '\'' +
+                "quantity='" + quantity + '\'' +
+                "customerId='" + customerId + '\'' +
                 '}';
     }
 
