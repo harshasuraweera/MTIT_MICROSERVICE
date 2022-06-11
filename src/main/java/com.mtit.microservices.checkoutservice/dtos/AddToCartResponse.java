@@ -2,50 +2,53 @@ package com.mtit.microservices.checkoutservice.dtos;
 
 public class AddToCartResponse {
 
-    private String foodName;
-    private String foodPrice;
+    private String statusMessage;
     private String quantity;
-    private String totalPrice;
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
+    private String foodId;
+
+    private String customerId;
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
     }
 
-    public void setFoodPrice(String foodPrice) {
-        this.foodPrice = foodPrice;
-    }
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public String getFoodPrice() {
-        return foodPrice;
+    public String getStatusMessage() {
+        return statusMessage;
     }
 
     public String getQuantity() {
         return quantity;
     }
 
-    public String getTotalPrice() {
-        return totalPrice;
+    public String getFoodId() {
+        return foodId;
     }
 
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     @Override
     public String toString() {
         return "AddToCartResponse{" +
-                "foodName='" + foodName + '\'' +
-                ", foodPrice='" + foodPrice + '\'' +
-                ", quantity='" + quantity + '\'' +
-                ", totalPrice='" + totalPrice + '\'' +
+                "statusMessage='" + statusMessage + '\'' +
+                ",foodId='" + foodId + '\'' +
+                ",quantity='" + quantity + '\'' +
+                ",customerId='" + customerId + '\'' +
                 '}';
     }
 

@@ -19,21 +19,26 @@ public class AddToCartController {
     public @ResponseBody
     AddToCartResponse item(@RequestBody AddToCartRequest addToCartRequest) {
 
-        System.out.println("Search Results: " + addToCartRequest); //return the postman send request data
+        System.out.println("Postman Results: " + addToCartRequest);
+        var addToCartResponse = new AddToCartResponse();
 
-        //search on the db and get the values and send to the response
-
+        //foodId, customerId and itemQty are coming via the Postman JSON Body
         Cart cart = new Cart();
         cart.setFoodId(addToCartRequest.getFoodId());
         cart.setCustomerId(addToCartRequest.getCustomerId());
         cart.setQuantity(addToCartRequest.getQuantity());
-        cartRepository.save(cart);
 
-        var addToCartResponse = new AddToCartResponse();
-        addToCartResponse.setQuantity("10");
-        addToCartResponse.setTotalPrice("10*24420");
+        try {
+            cartRepository.save(cart);
 
+            addToCartResponse.setStatusMessage("Item is successfully added to the cart.");
+            addToCartResponse.setFoodId(addToCartRequest.getFoodId());
+            addToCartResponse.setQuantity(addToCartRequest.getQuantity());
+            addToCartResponse.setCustomerId(addToCartRequest.getCustomerId());
 
+        }catch (Exception e){
+            addToCartResponse.setStatusMessage("There is an issue while adding item to the cart.");
+        }
 
         return addToCartResponse;
 
