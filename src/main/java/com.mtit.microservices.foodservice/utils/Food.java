@@ -19,15 +19,13 @@ public class Food {
     private String foodCategory;
     protected String foodPrice;
 
-    public Integer getFood_id() {
+    public Integer getFoodId() {
         return foodId;
     }
-
-    public void setfoodId(Integer foodId) {
+    public void setFoodId(Integer foodId) {
         this.foodId = foodId;
     }
-
-    public String getfoodName() {
+    public String getFoodName() {
         return foodName;
     }
 
