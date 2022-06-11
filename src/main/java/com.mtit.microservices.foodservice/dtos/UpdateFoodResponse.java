@@ -1,6 +1,6 @@
 package com.mtit.microservices.foodservice.dtos;
 
-public class AddFoodResponse {
+public class UpdateFoodResponse {
 
     private String foodID;
     private String message;
@@ -9,7 +9,7 @@ public class AddFoodResponse {
         return foodID;
     }
 
-    public void setItemId(String foodID) {
+    public void setFoodID(String foodID) {
         this.foodID = foodID;
     }
 
@@ -25,7 +25,9 @@ public class AddFoodResponse {
     public String toString() {
         return "FoodServiceResponse{" +
                 "foodID='" + foodID + '\'' +
+                //Updated message
                 ", message='" + message + '\'' +
                 '}';
     }
+
 }

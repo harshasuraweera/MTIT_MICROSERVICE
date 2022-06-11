@@ -1,6 +1,6 @@
 package com.mtit.microservices.foodservice.dtos;
 
-public class AddFoodResponse {
+public class DeleteFoodResponse {
 
     private String foodID;
     private String message;
@@ -25,6 +25,7 @@ public class AddFoodResponse {
     public String toString() {
         return "FoodServiceResponse{" +
                 "foodID='" + foodID + '\'' +
+                //Delete Message
                 ", message='" + message + '\'' +
                 '}';
     }

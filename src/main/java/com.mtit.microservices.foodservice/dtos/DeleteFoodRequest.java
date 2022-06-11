@@ -1,11 +1,12 @@
 package com.mtit.microservices.foodservice.dtos;
 
-public class AddFoodRequest {
+public class DeleteFoodRequest {
+
 
     private String foodName;
     private String foodStock;
-    private String foodCategory;
-    private String foodPrice;
+    private String foodBranch;
+    private int foodPrice;
 
 
     public String getFoodName() {
@@ -25,17 +26,17 @@ public class AddFoodRequest {
     }
 
     public String getFoodBranch() {
-        return foodCategory;
+        return foodBranch;
     }
 
     public void setFoodBranch(String foodBranch) {
-        this.foodCategory = foodBranch;
+        this.foodBranch = foodBranch;
     }
-    public String getFoodPrice() {
+    public float getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(String foodPrice) {
+    public void setFoodPrice(int foodPrice) {
         this.foodPrice = foodPrice;
     }
 
@@ -43,10 +44,10 @@ public class AddFoodRequest {
     public String toString() {
 
         return "AddFoodRequest{" +
-                //foodID
+                //onlyFoodID
                 "foodName='" + foodName + '\'' +
                 ", foodStock ='" + foodStock + '\'' +
-                ", foodBranch=" + foodCategory + '\'' +
+                ", foodBranch=" + foodBranch + '\'' +
                 ", foodPrice=" + foodPrice +
                 '}';
     }

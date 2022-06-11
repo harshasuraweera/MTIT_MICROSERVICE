@@ -9,16 +9,16 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/addFood")
-public class FoodServiceController {
+public class AddFoodServiceController {
     @PostMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    AddFoodResponse item(@RequestBody AddFoodRequest foodRequest){
+    AddFoodResponse Food(@RequestBody AddFoodRequest foodRequest){
 
         System.out.println("Food Details: "+ foodRequest);
 
         var addFoodResponse = new AddFoodResponse();
         addFoodResponse.setItemId(UUID.randomUUID().toString());
-       addFoodResponse.setMessage("Successfully found the item..bla bla bla");
+       addFoodResponse.setMessage("Food Added Successfully..");
 
         return addFoodResponse;
 
