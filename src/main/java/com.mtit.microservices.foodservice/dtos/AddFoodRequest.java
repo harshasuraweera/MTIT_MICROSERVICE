@@ -26,12 +26,12 @@ public class AddFoodRequest {
         this.foodStock = foodStock;
     }
 
-    public String getFoodBranch() {
+    public String getFoodCategory() {
         return foodCategory;
     }
 
-    public void setFoodBranch(String foodBranch) {
-        this.foodCategory = foodBranch;
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
     }
     public String getFoodPrice() {
         return foodPrice;
