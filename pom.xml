@@ -14,8 +14,8 @@
     <groupId>com.mtit.microservices</groupId>
     <artifactId>MTIT_MICROSERVICE</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Item Service</name>
-    <description>Demo project for Spring Boot</description>
+    <name>Checkout Service</name>
+    <description>Cover the search foods, add, update and delete foods over the cart</description>
 
     <properties>
         <java.version>16</java.version>
