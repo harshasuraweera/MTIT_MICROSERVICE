@@ -2,6 +2,7 @@ package com.mtit.microservices.foodservice.dtos;
 
 public class DeleteFoodResponse {
 
+
     private String foodID;
     private String message;
 
@@ -9,7 +10,7 @@ public class DeleteFoodResponse {
         return foodID;
     }
 
-    public void setItemId(String foodID) {
+    public void setFoodID(String foodID) {
         this.foodID = foodID;
     }
 
@@ -29,4 +30,5 @@ public class DeleteFoodResponse {
                 ", message='" + message + '\'' +
                 '}';
     }
+
 }

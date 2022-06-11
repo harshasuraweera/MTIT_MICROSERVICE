@@ -3,6 +3,7 @@ package com.mtit.microservices.foodservice.dtos;
 public class DeleteFoodRequest {
 
 
+    private int foodID;
     private String foodName;
     private String foodStock;
     private String foodBranch;
