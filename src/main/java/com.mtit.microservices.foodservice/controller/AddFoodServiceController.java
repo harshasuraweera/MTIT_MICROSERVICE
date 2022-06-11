@@ -19,28 +19,28 @@ public class AddFoodServiceController {
     private FoodRepository foodRepository;
     @PostMapping(consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    AddFoodResponse Food(@RequestBody AddFoodRequest foodRequest){
+    AddFoodResponse item(@RequestBody AddFoodRequest addfoodRequest){
 
-        System.out.println("Food Details: "+ foodRequest);
+        System.out.println("Food Details: "+ addfoodRequest);
 
         var addFoodResponse = new AddFoodResponse();
 
         //foodId,foodName,foodStock ,foodCategory and foodPrice are coming via the Postman JSON Body
         Food food = new Food();
 
-        food.setFoodName(foodRequest.getFoodName());
-        food.setFoodStock(foodRequest.getFoodStock());
-        food.setFoodCategory(foodRequest.getFoodCategory());
-        food.setFoodPrice(foodRequest.getFoodPrice());
+        food.setFoodName(addfoodRequest.getFoodName());
+        food.setFoodStock(addfoodRequest.getFoodStock());
+        food.setFoodCategory(addfoodRequest.getFoodCategory());
+        food.setFoodPrice(addfoodRequest.getFoodPrice());
 
         try {
             foodRepository.save(food);
 
             addFoodResponse.setMessage("Food Successfully Added to the System...!!!");
-            addFoodResponse.setFoodName(addFoodResponse.getFoodName());
-            addFoodResponse.setFoodStock(addFoodResponse.getFoodStock());
-            addFoodResponse.setFoodCategory(addFoodResponse.getFoodCategory());
-            addFoodResponse.setFoodPrice(addFoodResponse.getFoodPrice());
+            addFoodResponse.setFoodName(addfoodRequest.getFoodName());
+            addFoodResponse.setFoodStock(addfoodRequest.getFoodStock());
+            addFoodResponse.setFoodCategory(addfoodRequest.getFoodCategory());
+            addFoodResponse.setFoodPrice(addfoodRequest.getFoodPrice());
 
         }catch (Exception e){
             addFoodResponse.setMessage("There is an issue while adding item to the cart.");
