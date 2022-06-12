@@ -10,9 +10,7 @@ public class DeleteFromCartRequest {
         return foodId;
     }
 
-    public void setFoodId(String foodId) {
-        this.foodId = foodId;
-    }
+    public void setFoodId(String foodId) {this.foodId = foodId;}
 
     public String getCustomerId() {
         return customerId;

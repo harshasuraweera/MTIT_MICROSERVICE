@@ -5,15 +5,12 @@ public class AddToCartResponse {
 
     private String statusMessage;
     private String quantity;
-
     private String foodId;
-
     private String customerId;
 
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
-
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;

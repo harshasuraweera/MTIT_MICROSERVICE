@@ -5,7 +5,6 @@ public class AddToCartRequest {
 
     private String foodId;
     private String quantity;
-
     private String customerId;
 
     public String getFoodId() {

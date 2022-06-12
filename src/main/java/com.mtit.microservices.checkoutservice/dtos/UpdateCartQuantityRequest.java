@@ -5,7 +5,6 @@ public class UpdateCartQuantityRequest {
 
     private String foodId;
     private String newQuantity;
-
     private String customerId;
 
     public String getFoodId() {

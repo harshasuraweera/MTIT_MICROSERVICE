@@ -7,9 +7,7 @@ public class UpdateCartQuantityResponse {
     private String newQuantity;
     private String statusMessage;
 
-    public String getFoodId() {
-        return foodId;
-    }
+    public String getFoodId() {return foodId;}
 
     public void setFoodId(String foodId) {
         this.foodId = foodId;
