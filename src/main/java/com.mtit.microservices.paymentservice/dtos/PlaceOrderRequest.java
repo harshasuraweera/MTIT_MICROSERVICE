@@ -9,51 +9,51 @@ public class PlaceOrderRequest {
     private String foodName;
     private String address;
 
-    public String getorderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setorderId(String orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
-    public String getownerName() {
+    public String getOwnerName() {
         return ownerName;
     }
 
-    public void setownerName(String ownerName) {
+    public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
 
-    public String getmobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setmobileNumber(String mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getorderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setorderDate(String orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
-    public String getfoodName() {
+    public String getFoodName() {
         return foodName;
     }
 
-    public void setfoodName(String foodName) {
+    public void setFoodName(String foodName) {
         this.foodName = foodName;
     }
 
-    public String getaddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setaddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -65,8 +65,8 @@ public class PlaceOrderRequest {
                 "ownerName='" + ownerName + '\'' +
                 "mobileNumber='" + mobileNumber + '\'' +
                 "orderDate='" + orderDate + '\'' +
-                ", foodName='" + foodName + '\'' +
-                ", address=" + address +
+                "foodName='" + foodName + '\'' +
+                "address=" + address +
                 '}';
     }
 }

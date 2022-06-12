@@ -4,19 +4,20 @@ public class DeleteCardDetailsRequest {
 
     private String recordId;
 
-    public String getrecordId() {
+    public String getRecordId() {
         return recordId;
     }
 
-    public void setrecordId(String recordId) {
+    public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
+
 
 
     @Override
     public String toString() {
         return "DeleteCardDetailsRequest{" +
-                ", recordId=" + recordId +
+                "recordId='" + recordId + '\'' +
                 '}';
     }
 }

@@ -1,14 +1,34 @@
-package com.mtit.microservices.paymentservice.dtos;
+package com.mtit.microservices.paymentservice.utils;
 
-public class PlaceOrderResponse {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity // These tells Hibernate to make a table out of this class
+public class PlaceOrder {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
+
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private String orderId;
-    private String message;
+
     private String ownerName;
     private String mobileNumber;
     private String orderDate;
     private String foodName;
     private String address;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getOrderId() {
         return orderId;
@@ -16,14 +36,6 @@ public class PlaceOrderResponse {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String getOwnerName() {
@@ -65,19 +77,4 @@ public class PlaceOrderResponse {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    @Override
-    public String toString() {
-        return "PlaceOrderResponse{" +
-                "orderId='" + orderId + '\'' +
-                ", message='" + message + '\'' +
-                ", ownerName='" + ownerName + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", orderDate='" + orderDate + '\'' +
-                ", foodName='" + foodName + '\'' +
-                ", address=" + address + '\'' +
-                '}';
-    }
 }
-
-

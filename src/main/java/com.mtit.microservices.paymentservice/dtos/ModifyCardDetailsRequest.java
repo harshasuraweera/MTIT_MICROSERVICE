@@ -3,59 +3,69 @@ package com.mtit.microservices.paymentservice.dtos;
 public class ModifyCardDetailsRequest {
 
     private String recordId;
-    private String cardNumber;
-    private String month;
-    private String year;
-    private String cvv;
+    private String newcardNumber;
+    private String newcardHolderName;
+    private String newmonth;
+    private String newyear;
+    private String newcvv;
 
-    public String getrecordId() {
+    public String getRecordId() {
         return recordId;
     }
 
-    public void setrecordId(String recordId) {
+    public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
-    public String getcardNumber() {
-        return cardNumber;
+
+    public String getNewcardNumber() {
+        return newcardNumber;
     }
 
-    public void setcardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setNewcardNumber(String newcardNumber) {
+        this.newcardNumber = newcardNumber;
     }
 
-    public String getmonth() {
-        return month;
+    public String getNewcardHolderName() {
+        return newcardHolderName;
     }
 
-    public void setmonth(String month) {
-        this.month = month;
+    public void setNewcardHolderName(String newcardHolderName) {
+        this.newcardHolderName = newcardHolderName;
     }
 
-    public String getyear() {
-        return year;
+    public String getNewmonth() {
+        return newmonth;
     }
 
-    public void setyear(String year) {
-        this.year = year;
+    public void setNewmonth(String newmonth) {
+        this.newmonth = newmonth;
     }
 
-    public String getcvv() {
-        return cvv;
+    public String getNewyear() {
+        return newyear;
     }
 
-    public void setcvv(String cvv) {
-        this.cvv = cvv;
+    public void setNewyear(String newyear) {
+        this.newyear = newyear;
     }
 
+    public String getNewcvv() {
+        return newcvv;
+    }
+
+    public void setNewcvv(String newcvv) {
+        this.newcvv = newcvv;
+    }
 
     @Override
     public String toString() {
-        return "CardDetailValidationRequest{" +
+        return "ModifyCardDetailsRequest{" +
                 "recordId='" + recordId + '\'' +
-                "cardNumber='" + cardNumber + '\'' +
-                ", month='" + month + '\'' +
-                ", year='" + year + '\'' +
-                ", cvv=" + cvv +
+                ", newcardNumber='" + newcardNumber + '\'' +
+                ", newcardHolderName='" + newcardHolderName + '\'' +
+                ", newmonth='" + newmonth + '\'' +
+                ", newyear='" + newyear + '\'' +
+                ", newcvv='" + newcvv + '\'' +
                 '}';
     }
 }

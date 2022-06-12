@@ -2,15 +2,15 @@ package com.mtit.microservices.paymentservice.dtos;
 
 public class DeleteCardDetailsResponse {
 
-    private String cardId;
+    private String recordId;
     private String message;
 
-    public String getcardId() {
-        return cardId;
+    public String getRecordId() {
+        return recordId;
     }
 
-    public void setcardId(String cardId) {
-        this.cardId = cardId;
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
     }
 
     public String getMessage() {
@@ -25,7 +25,7 @@ public class DeleteCardDetailsResponse {
     @Override
     public String toString() {
         return "DeleteCardDetailsResponse{" +
-                "cardId='" + cardId + '\'' +
+                "recordId='" + recordId + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
