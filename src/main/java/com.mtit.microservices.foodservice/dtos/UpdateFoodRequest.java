@@ -13,7 +13,7 @@ public class UpdateFoodRequest {
     }
 
     public void setFoodId(String foodId) {
-        this.foodId=foodId;
+        this.foodId = foodId;
     }
 
     public String getFoodName() {
@@ -35,6 +35,7 @@ public class UpdateFoodRequest {
     public String getFoodCategory() {
         return foodCategory;
     }
+
     public void setFoodCategory(String foodCategory) {
         this.foodCategory = foodCategory;
     }
@@ -49,14 +50,12 @@ public class UpdateFoodRequest {
 
     @Override
     public String toString() {
-
-
-        return "AddFoodRequest{" +
+        return "UpdateFoodRequest{" +
                 "foodId='" + foodId + '\'' +
-                ",foodName='" + foodName + '\'' +
-                ", foodStock ='" + foodStock + '\'' +
-                ", foodCategory=" + foodCategory + '\'' +
-                ", foodPrice=" + foodPrice +
+                ", newFoodName='" + foodName + '\'' +
+                ", newFoodStock='" + foodStock + '\'' +
+                ", foodCategory='" + foodCategory + '\'' +
+                ", newFoodPrice='" + foodPrice + '\'' +
                 '}';
     }
 }

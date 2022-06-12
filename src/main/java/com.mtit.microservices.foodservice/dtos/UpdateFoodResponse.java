@@ -3,12 +3,11 @@ package com.mtit.microservices.foodservice.dtos;
 public class UpdateFoodResponse {
 
     private String message;
-
     private String foodId;
-    private String foodName;
-    private String foodStock;
+    private String newFoodName;
+    private String newFoodStock;
     private String foodCategory;
-    private String foodPrice;
+    private String newFoodPrice;
 
 
     public void setMessage(String message) {
@@ -26,20 +25,20 @@ public class UpdateFoodResponse {
         return foodId;
     }
 
-    public String getFoodName() {
-        return foodName;
+    public String getNewFoodName() {
+        return newFoodName;
     }
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
+    public void setNewFoodName(String newFoodName) {
+        this.newFoodName = newFoodName;
     }
 
-    public String getFoodStock() {
-        return foodStock;
+    public String getNewFoodStock() {
+        return newFoodStock;
     }
 
-    public void setFoodStock(String foodStock) {
-        this.foodStock = foodStock;
+    public void setNewFoodStock(String newFoodStock) {
+        this.newFoodStock = newFoodStock;
     }
 
     public String getFoodCategory() {
@@ -50,23 +49,23 @@ public class UpdateFoodResponse {
         this.foodCategory= foodCategory;
     }
 
-    public String getFoodPrice() {
-        return foodPrice;
+    public String getNewFoodPrice() {
+        return newFoodPrice;
     }
 
-    public void setFoodPrice(String foodPrice) {
-        this.foodPrice = foodPrice;
+    public void setNewFoodPrice(String newFoodPrice) {
+        this.newFoodPrice = newFoodPrice;
     }
 
     @Override
     public String toString() {
-        return "AddFoodResponse{" +
+        return "UpdateFoodResponse{" +
                 "message='" + message + '\'' +
                 ",foodId='" + foodId + '\'' +
-                ",foodName='" + foodName + '\'' +
-                ",foodStock='" + foodStock + '\'' +
+                ",newFoodName='" + newFoodName + '\'' +
+                ",newFoodStock='" + newFoodStock + '\'' +
                 ",foodCategory='" + foodCategory + '\'' +
-                ",foodPrice='" + foodPrice + '\'' +
+                ",newFoodPrice='" + newFoodPrice + '\'' +
                 '}';
     }
 

@@ -6,8 +6,8 @@ public class DeleteFoodRequest {
     private String foodId;
     private String foodName;
     private String foodStock;
-    private String foodBranch;
-    private int foodPrice;
+    private String foodCategory;
+    private String foodPrice;
 
     public String getfoodId() {
         return foodId;
@@ -32,18 +32,18 @@ public class DeleteFoodRequest {
         this.foodStock = foodStock;
     }
 
-    public String getFoodBranch() {
-        return foodBranch;
+    public String getFoodCategory() {
+        return foodCategory;
     }
 
-    public void setFoodBranch(String foodBranch) {
-        this.foodBranch = foodBranch;
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
     }
-    public float getFoodPrice() {
+    public String getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(int foodPrice) {
+    public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
     }
 
