@@ -1,7 +1,12 @@
 //IT19208718 | Suraweera S.M.H.M. | MTIT_MICROSERVICES ASSIGNMENT | G067
 package com.mtit.microservices.checkoutservice.controller;
 
-import com.mtit.microservices.checkoutservice.dtos.*;
+import com.mtit.microservices.checkoutservice.dtos.AddToCartRequest;
+import com.mtit.microservices.checkoutservice.dtos.AddToCartResponse;
+import com.mtit.microservices.checkoutservice.dtos.DeleteFromCartRequest;
+import com.mtit.microservices.checkoutservice.dtos.DeleteFromCartResponse;
+import com.mtit.microservices.checkoutservice.dtos.UpdateCartQuantityRequest;
+import com.mtit.microservices.checkoutservice.dtos.UpdateCartQuantityResponse;
 import com.mtit.microservices.checkoutservice.utils.Cart;
 import com.mtit.microservices.checkoutservice.utils.CartRepository;
 import com.mtit.microservices.checkoutservice.utils.Food;
