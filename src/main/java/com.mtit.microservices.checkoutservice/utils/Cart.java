@@ -1,3 +1,4 @@
+//IT19208718 | Suraweera S.M.H.M. | MTIT_MICROSERVICES ASSIGNMENT | G067
 package com.mtit.microservices.checkoutservice.utils;
 
 import javax.persistence.Entity;
@@ -9,10 +10,10 @@ import javax.persistence.Id;
 public class Cart {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String customerId;
 
     private String foodId;
