@@ -6,11 +6,11 @@ public class MarkAsProcesseResponse {
     private String message;
     private String status;
 
-    public String getItemId() {
+    public String getOrderID() {
         return orderID;
     }
 
-    public void setItemId(String itemId) {
+    public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
 

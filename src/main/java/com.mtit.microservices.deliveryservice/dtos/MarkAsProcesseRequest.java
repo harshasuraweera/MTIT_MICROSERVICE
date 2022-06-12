@@ -5,19 +5,17 @@ public class MarkAsProcesseRequest {
     private String orderID;
     private String status;
 
-    public String getItemName() {
+    public String getOrderID() {
         return orderID;
     }
 
-    public void setItemName(String itemName) {
-        this.orderID = orderID;
-    }
+    public void setOrderID(String orderID) {this.orderID = orderID;}
 
-    public String getItemQty() {
+    public String getStatus() {
         return status;
     }
 
-    public void setItemQty(String itemQty) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
