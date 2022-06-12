@@ -2,14 +2,14 @@ package com.mtit.microservices.deliveryservice.dtos;
 
 public class MarkAsProcesseRequest {
 
-    private String orderID;
+    private String orderId;
     private String status;
 
-    public String getOrderID() {
-        return orderID;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrderID(String orderID) {this.orderID = orderID;}
+    public void setOrderId(String orderId) {this.orderId = orderId;}
 
     public String getStatus() {
         return status;
@@ -23,7 +23,7 @@ public class MarkAsProcesseRequest {
     @Override
     public String toString() {
         return "DeliveryRequest{" +
-                "orderID='" + orderID + '\'' +
+                "orderID='" + orderId + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }

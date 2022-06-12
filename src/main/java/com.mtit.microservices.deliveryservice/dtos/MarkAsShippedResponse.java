@@ -2,16 +2,16 @@ package com.mtit.microservices.deliveryservice.dtos;
 
 public class MarkAsShippedResponse {
 
-    private String orderID;
+    private String orderId;
     private String status;
     private String message;
 
-    public String getItemId() {
-        return orderID;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setItemId(String itemId) {
-        this.orderID = orderID;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getStatus() {return status;}
@@ -29,7 +29,7 @@ public class MarkAsShippedResponse {
     @Override
     public String toString() {
         return "DeliveryResponse{" +
-                "orderId='" + orderID + '\'' +
+                "orderId='" + orderId + '\'' +
                 ", status='" + status + '\'' +
                 ", message='" + message + '\'' +
                 '}';

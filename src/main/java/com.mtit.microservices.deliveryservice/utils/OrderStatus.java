@@ -6,22 +6,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // These tells Hibernate to make a table out of this class
-public class PlaceOrder2 {
+public class OrderStatus {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private String orderID;
+    private String orderId;
     private String status;
 
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
 
-    public String getOrderID() {return orderID;}
+    public String getOrderId() {return orderId;}
 
-    public void setOrderID(String orderID) {this.orderID = orderID;}
+    public void setOrderId(String orderId) {this.orderId = orderId;}
 
     public String getStatus() {return status;}
 

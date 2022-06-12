@@ -2,8 +2,10 @@ package com.mtit.microservices.deliveryservice.controller;
 
 import com.mtit.microservices.deliveryservice.dtos.MarkAsProcesseRequest;
 import com.mtit.microservices.deliveryservice.dtos.MarkAsProcesseResponse;
-import com.mtit.microservices.deliveryservice.utils.PlaceOrder2;
-import com.mtit.microservices.deliveryservice.utils.OrdernbRepository;
+import com.mtit.microservices.deliveryservice.dtos.MarkAsShippedRequest;
+import com.mtit.microservices.deliveryservice.dtos.MarkAsShippedResponse;
+import com.mtit.microservices.deliveryservice.utils.OrderStatus;
+import com.mtit.microservices.deliveryservice.utils.OrderStatusRepository;
 import com.mtit.microservices.deliveryservice.utils.PlaceOrder;
 import com.mtit.microservices.deliveryservice.utils.PlaceOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,7 @@ import java.util.List;
 @RequestMapping(path="/Delivery")
 public class FoodDeliveryProcesseController {
     @Autowired
-    private OrdernbRepository ordernbRepository;
+    private OrderStatusRepository orderStatusRepository;
 
     @Autowired
     private PlaceOrderRepository placeOrderRepository;
@@ -28,15 +30,15 @@ public class FoodDeliveryProcesseController {
         System.out.println("Processe Details: "+ DeliveryRequest);
         var deliveryresponse = new MarkAsProcesseResponse();
 
-        PlaceOrder2 orderNB = new PlaceOrder2();
-        orderNB.setOrderID(DeliveryRequest.getOrderID());
-        orderNB.setStatus(DeliveryRequest.getStatus());
+        OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setOrderId(DeliveryRequest.getOrderId());
+        orderStatus.setStatus(DeliveryRequest.getStatus());
 
         try {
 
-            ordernbRepository.save(orderNB);
+            orderStatusRepository.save(orderStatus);
             deliveryresponse.setMessage("Successfully found the Delivery Processe..");
-            deliveryresponse.setOrderID(DeliveryRequest.getOrderID());
+            deliveryresponse.setOrderId(DeliveryRequest.getOrderId());
             deliveryresponse.setStatus(DeliveryRequest.getStatus());
 
         }catch (Exception e){
@@ -48,6 +50,31 @@ public class FoodDeliveryProcesseController {
     @GetMapping(path = "/showOrder")
     public ResponseEntity<List<PlaceOrder>> showOrderByDate(@RequestParam String keyword) {
         return new ResponseEntity<List<PlaceOrder>>(placeOrderRepository.findByOrderDate(keyword), HttpStatus.OK);
+    }
+
+    @PutMapping(path = "/updateDeliveryStatus", consumes = "application/json", produces = "application/json")
+    public @ResponseBody MarkAsShippedResponse updateDeliveryStatus(@RequestBody MarkAsShippedRequest shippedRequest) {
+
+        var shippedResponse = new MarkAsShippedResponse();
+
+        ResponseEntity<Integer> result = new ResponseEntity<Integer>(orderStatusRepository.updateDeliveryStatus(shippedRequest.getStatus(), shippedRequest.getOrderId()), HttpStatus.OK);
+
+        String[] response = result.toString().split(",");
+
+        if (Integer.parseInt(response[1]) > 0) {
+
+            shippedResponse.setOrderId(shippedRequest.getOrderId());
+            shippedResponse.setStatus(shippedRequest.getStatus());
+            shippedResponse.setMessage("Quantity has been updated successfully.");
+
+        } else {
+
+            shippedResponse.setOrderId(shippedRequest.getOrderId());
+            shippedResponse.setStatus("Error");
+            shippedResponse.setMessage("There is an issue in the delivery status update...!!!");
+        }
+
+        return shippedResponse;
     }
 
 
