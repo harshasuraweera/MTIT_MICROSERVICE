@@ -5,6 +5,8 @@ public class UpdateCartQuantityRequest {
     private String foodId;
     private String newQuantity;
 
+    private String customerId;
+
     public String getFoodId() {
         return foodId;
     }
@@ -21,12 +23,20 @@ public class UpdateCartQuantityRequest {
         return newQuantity;
     }
 
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
     @Override
     public String toString() {
         return "UpdateCartQuantityRequest{" +
                 "foodId='" + foodId + '\'' +
-                "newQuantity='" + newQuantity + '\'' +
+                ", newQuantity='" + newQuantity + '\'' +
+                ", customerId='" + customerId + '\'' +
                 '}';
     }
-
 }

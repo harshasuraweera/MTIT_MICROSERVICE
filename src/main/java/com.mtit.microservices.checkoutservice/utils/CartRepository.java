@@ -15,6 +15,12 @@ public interface CartRepository extends CrudRepository<Cart, Integer> {
 
     @Modifying
     @Transactional
-    @Query("delete from Cart c where c.foodId=:foodId and c.customerId=:customerId")
+    @Query("delete from Cart c where c.foodId =:foodId and c.customerId=:customerId")
     Integer deleteFromCart(@Param("foodId") String foodId, @Param("customerId") String customerId);
+
+
+    @Modifying
+    @Transactional
+    @Query("update Cart c set c.quantity =:quantity where c.foodId =:foodId and c.customerId=:customerId")
+    Integer updateCartQuantity(@Param("quantity") String quantity, @Param("foodId") String foodId, @Param("customerId") String customerId);
 }

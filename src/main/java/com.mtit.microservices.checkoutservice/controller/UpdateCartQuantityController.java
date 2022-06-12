@@ -18,10 +18,7 @@ public class UpdateCartQuantityController {
 
         var updateCartQuantityResponse = new UpdateCartQuantityResponse();
         updateCartQuantityResponse.setFoodId("Bread");
-        updateCartQuantityResponse.setOldQuantity("260");
         updateCartQuantityResponse.setNewQuantity("260");
-        updateCartQuantityResponse.setFoodPrice("260");
-        updateCartQuantityResponse.setTotalPrice("260");
 
 
         return updateCartQuantityResponse;

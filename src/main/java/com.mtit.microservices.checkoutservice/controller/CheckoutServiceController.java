@@ -1,9 +1,7 @@
 package com.mtit.microservices.checkoutservice.controller;
 
-import com.mtit.microservices.checkoutservice.dtos.AddToCartRequest;
-import com.mtit.microservices.checkoutservice.dtos.AddToCartResponse;
-import com.mtit.microservices.checkoutservice.dtos.DeleteFromCartRequest;
-import com.mtit.microservices.checkoutservice.dtos.DeleteFromCartResponse;
+
+import com.mtit.microservices.checkoutservice.dtos.*;
 import com.mtit.microservices.checkoutservice.utils.Cart;
 import com.mtit.microservices.checkoutservice.utils.CartRepository;
 import com.mtit.microservices.checkoutservice.utils.Food;
@@ -26,7 +24,7 @@ public class CheckoutServiceController {
 
     @PostMapping(path = "/addToCart", consumes = "application/json", produces = "application/json")
     public @ResponseBody
-    AddToCartResponse item(@RequestBody AddToCartRequest addToCartRequest) {
+    AddToCartResponse addFoodToCart(@RequestBody AddToCartRequest addToCartRequest) {
 
         System.out.println("Postman Results: " + addToCartRequest);
         var addToCartResponse = new AddToCartResponse();
@@ -54,13 +52,13 @@ public class CheckoutServiceController {
     }
 
     @GetMapping(path = "/searchFood")
-    public ResponseEntity<List<Food>> getFoodByName(@RequestParam String keyword){
+    public ResponseEntity<List<Food>> searchFoodByName(@RequestParam String keyword){
         return new ResponseEntity<List<Food>>(foodRepository.findByFoodName(keyword), HttpStatus.OK);
     }
 
 
     @DeleteMapping(path = "/deleteFromCart", consumes = "application/json", produces = "application/json")
-    public @ResponseBody DeleteFromCartResponse item(@RequestBody DeleteFromCartRequest deleteFromCartRequest) {
+    public @ResponseBody DeleteFromCartResponse deleteItemFromCart(@RequestBody DeleteFromCartRequest deleteFromCartRequest) {
         System.out.println("Postman Results: " + deleteFromCartRequest);
 
         var deleteFromCartResponse = new DeleteFromCartResponse();
@@ -76,6 +74,30 @@ public class CheckoutServiceController {
         }
 
         return deleteFromCartResponse;
+
+    }
+
+
+    @PutMapping(path = "/updateCartQuantity", consumes = "application/json", produces = "application/json")
+    public @ResponseBody UpdateCartQuantityResponse updateCartQuantity(@RequestBody UpdateCartQuantityRequest updateCartQuantityRequest) {
+
+        System.out.println("Postman Results: " + updateCartQuantityRequest);
+        var updateCartQuantityResponse = new UpdateCartQuantityResponse();
+
+        ResponseEntity<Integer> result = new ResponseEntity<Integer>(cartRepository.updateCartQuantity(updateCartQuantityRequest.getNewQuantity(), updateCartQuantityRequest.getFoodId(), updateCartQuantityRequest.getCustomerId()), HttpStatus.OK);
+        String[] response = result.toString().split(",");
+
+        if(Integer.parseInt(response[1])>0){
+            updateCartQuantityResponse.setFoodId(updateCartQuantityRequest.getFoodId());
+            updateCartQuantityResponse.setNewQuantity(updateCartQuantityRequest.getNewQuantity());
+            updateCartQuantityResponse.setStatusMessage("Quantity has been updated successfully.");
+        }else {
+            updateCartQuantityResponse.setFoodId(updateCartQuantityRequest.getFoodId());
+            updateCartQuantityResponse.setNewQuantity("0");
+            updateCartQuantityResponse.setStatusMessage("Quantity updating has been failed.");
+        }
+
+        return updateCartQuantityResponse;
 
     }
 

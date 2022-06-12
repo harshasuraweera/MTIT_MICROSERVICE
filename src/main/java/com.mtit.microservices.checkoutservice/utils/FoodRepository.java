@@ -10,6 +10,5 @@ import java.util.List;
 // CRUD refers Create, Read, Update, Delete
 
 public interface FoodRepository extends CrudRepository<Food, Long> {
-
     List<Food> findByFoodName(String food_name);
 }
