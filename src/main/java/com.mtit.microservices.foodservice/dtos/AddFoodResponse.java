@@ -3,26 +3,27 @@ package com.mtit.microservices.foodservice.dtos;
 public class AddFoodResponse {
 
     private String message;
-
-    private String foodID;
+    private String foodId;
     private String foodName;
     private String foodStock;
     private String foodCategory;
     private String foodPrice;
 
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
     public String getMessage() {
         return message;
     }
-    public void setFoodID(String foodID) {
-        this.foodID = foodID;
+    public void setMessage(String message) {
+        this.message = message;
     }
-    public String getFoodID() {
-        return foodID;
+
+
+    public String getFoodId() {
+        return foodId;
     }
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
+
 
     public String getFoodName() {
         return foodName;
@@ -60,7 +61,7 @@ public class AddFoodResponse {
     public String toString() {
         return "AddFoodResponse{" +
                 "message='" + message + '\'' +
-                ",foodID='" + foodID + '\'' +
+                ",foodId='" + foodId + '\'' +
                 ",foodName='" + foodName + '\'' +
                 ",foodStock='" + foodStock + '\'' +
                 ",foodCategory='" + foodCategory + '\'' +

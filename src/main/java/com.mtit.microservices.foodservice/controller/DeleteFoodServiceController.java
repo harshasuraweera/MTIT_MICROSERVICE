@@ -17,8 +17,8 @@ public class DeleteFoodServiceController {
         System.out.println("Food Details: "+ deletefoodRequest);
 
         var deleteFoodResponse = new DeleteFoodResponse();
-        deleteFoodResponse.setFoodID(UUID.randomUUID().toString());
-        deleteFoodResponse.setMessage("Food Item Deleted Successfully...!!-^-");
+        deleteFoodResponse.setFoodId("BUR102");
+        deleteFoodResponse.setMessage("This Food Item Details Deleted Successfully...!!-^-");
 
         return deleteFoodResponse;
 

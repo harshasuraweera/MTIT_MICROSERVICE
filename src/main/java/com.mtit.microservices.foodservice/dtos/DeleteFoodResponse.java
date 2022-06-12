@@ -3,15 +3,15 @@ package com.mtit.microservices.foodservice.dtos;
 public class DeleteFoodResponse {
 
 
-    private String foodID;
+    private String foodId;
     private String message;
 
-    public String getFoodID() {
-        return foodID;
+    public String getFoodId() {
+        return foodId;
     }
 
-    public void setFoodID(String foodID) {
-        this.foodID = foodID;
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
     }
 
     public String getMessage() {
@@ -25,8 +25,7 @@ public class DeleteFoodResponse {
     @Override
     public String toString() {
         return "FoodServiceResponse{" +
-                "foodID='" + foodID + '\'' +
-                //Delete Message
+                "foodId='" + foodId + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }

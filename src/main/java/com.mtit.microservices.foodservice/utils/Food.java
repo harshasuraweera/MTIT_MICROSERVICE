@@ -11,9 +11,10 @@ public class Food {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private String foodID;
-    private String foodName;
 
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private String foodId;
+    private String foodName;
     private String foodStock;
     private String foodCategory;
     protected String foodPrice;
@@ -21,17 +22,17 @@ public class Food {
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getFoodID(String foodID) {
-        return foodID;
+    public String getFoodId() {
+        return foodId;
     }
-    public void setFoodID(String foodID) {
-        this.foodID = foodID;
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
     }
+
     public String getFoodName() {
         return foodName;
     }

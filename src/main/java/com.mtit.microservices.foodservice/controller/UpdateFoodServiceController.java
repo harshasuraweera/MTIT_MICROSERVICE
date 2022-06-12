@@ -23,21 +23,23 @@ public class UpdateFoodServiceController {
         public @ResponseBody
         UpdateFoodResponse Food(@RequestBody UpdateFoodRequest updateFoodRequest){
 
-            System.out.println("Food Details: "+ updateFoodRequest);
+            System.out.println("Update Food Details: "+ updateFoodRequest);
 
             var updateFoodResponse = new UpdateFoodResponse();
             //foodId,foodName,foodStock ,foodCategory and foodPrice are coming via the Postman JSON Body
             Food food = new Food();
 
+            food.setFoodId(updateFoodRequest.getFoodId());
             food.setFoodName(updateFoodRequest.getFoodName());
             food.setFoodStock(updateFoodRequest.getFoodStock());
-            food.setFoodCategory(updateFoodResponse.getFoodCategory());
+            food.setFoodCategory(updateFoodRequest.getFoodCategory());
             food.setFoodPrice(updateFoodRequest.getFoodPrice());
 
             try {
                 foodRepository.save(food);
 
                 updateFoodResponse.setMessage("Food Successfully Updated the System...!!!");
+                updateFoodResponse.setFoodId(updateFoodResponse.getFoodId());
                 updateFoodResponse.setFoodName(updateFoodResponse.getFoodName());
                 updateFoodResponse.setFoodStock(updateFoodResponse.getFoodStock());
                 updateFoodResponse.setFoodCategory(updateFoodResponse.getFoodCategory());
