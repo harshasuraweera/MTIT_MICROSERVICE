@@ -62,14 +62,12 @@ public class CheckoutServiceController {
     @DeleteMapping(path = "/deleteFromCart", consumes = "application/json", produces = "application/json")
     public @ResponseBody DeleteFromCartResponse item(@RequestBody DeleteFromCartRequest deleteFromCartRequest) {
         System.out.println("Postman Results: " + deleteFromCartRequest);
+
         var deleteFromCartResponse = new DeleteFromCartResponse();
         ResponseEntity<Integer> result = new ResponseEntity<Integer>(cartRepository.deleteFromCart(deleteFromCartRequest.getFoodId(), deleteFromCartRequest.getCustomerId()), HttpStatus.OK);
-
-        System.out.println(result);
-
         String[] response = result.toString().split(",");
 
-        if(Integer.valueOf(response[1])>0){
+        if(Integer.parseInt(response[1])>0){
             deleteFromCartResponse.setFoodId(deleteFromCartRequest.getFoodId());
             deleteFromCartResponse.setStatusMessage("The item is successfully delete from the cart.");
         }else{
