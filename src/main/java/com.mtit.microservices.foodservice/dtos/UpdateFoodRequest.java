@@ -5,7 +5,7 @@ public class UpdateFoodRequest {
     private String foodName;
     private String foodStock;
     private String foodCategory;
-    private int foodPrice;
+    private String foodPrice;
 
 
     public String getFoodName() {
@@ -35,7 +35,7 @@ public class UpdateFoodRequest {
         return foodPrice;
     }
 
-    public void setFoodPrice(int foodPrice) {
+    public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
     }
 

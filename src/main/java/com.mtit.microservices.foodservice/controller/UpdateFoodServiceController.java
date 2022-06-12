@@ -37,14 +37,14 @@ public class UpdateFoodServiceController {
             try {
                 foodRepository.save(food);
 
-                updateFoodResponse.setMessage("Food Successfully Added to the System...!!!");
+                updateFoodResponse.setMessage("Food Successfully Updated the System...!!!");
                 updateFoodResponse.setFoodName(updateFoodResponse.getFoodName());
                 updateFoodResponse.setFoodStock(updateFoodResponse.getFoodStock());
                 updateFoodResponse.setFoodCategory(updateFoodResponse.getFoodCategory());
                 updateFoodResponse.setFoodPrice(updateFoodResponse.getFoodPrice());
 
             }catch (Exception e){
-                updateFoodResponse.setMessage("There is an issue while adding item to the cart.");
+                updateFoodResponse.setMessage("There is an issue while Updating Food to the System.");
             }
 
             return updateFoodResponse;

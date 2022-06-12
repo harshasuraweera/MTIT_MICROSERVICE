@@ -28,6 +28,7 @@ public class AddFoodServiceController {
         //foodId,foodName,foodStock ,foodCategory and foodPrice are coming via the Postman JSON Body
         Food food = new Food();
 
+        food.getFoodID(addfoodRequest.getFoodID());
         food.setFoodName(addfoodRequest.getFoodName());
         food.setFoodStock(addfoodRequest.getFoodStock());
         food.setFoodCategory(addfoodRequest.getFoodCategory());
@@ -37,13 +38,14 @@ public class AddFoodServiceController {
             foodRepository.save(food);
 
             addFoodResponse.setMessage("Food Successfully Added to the System...!!!");
+            addFoodResponse.setFoodID(addfoodRequest.getFoodID());
             addFoodResponse.setFoodName(addfoodRequest.getFoodName());
             addFoodResponse.setFoodStock(addfoodRequest.getFoodStock());
             addFoodResponse.setFoodCategory(addfoodRequest.getFoodCategory());
             addFoodResponse.setFoodPrice(addfoodRequest.getFoodPrice());
 
         }catch (Exception e){
-            addFoodResponse.setMessage("There is an issue while adding item to the cart.");
+            addFoodResponse.setMessage("There is an issue while adding Food Item To the System");
         }
 
         return addFoodResponse;
