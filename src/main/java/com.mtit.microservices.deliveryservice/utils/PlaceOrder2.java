@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // These tells Hibernate to make a table out of this class
-public class Ordernb {
+public class PlaceOrder2 {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
