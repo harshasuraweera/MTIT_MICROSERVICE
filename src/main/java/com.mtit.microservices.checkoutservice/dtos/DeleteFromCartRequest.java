@@ -3,6 +3,7 @@ package com.mtit.microservices.checkoutservice.dtos;
 public class DeleteFromCartRequest {
 
     private String foodId;
+    private String customerId;
 
     public String getFoodId() {
         return foodId;
@@ -12,11 +13,19 @@ public class DeleteFromCartRequest {
         this.foodId = foodId;
     }
 
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
     @Override
     public String toString() {
         return "DeleteFromCartRequest{" +
                 "foodId='" + foodId + '\'' +
+                ", customerId='" + customerId + '\'' +
                 '}';
     }
-
 }
