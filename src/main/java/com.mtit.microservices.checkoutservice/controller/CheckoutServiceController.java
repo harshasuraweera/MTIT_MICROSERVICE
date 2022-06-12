@@ -63,13 +63,13 @@ public class CheckoutServiceController {
     public @ResponseBody DeleteFromCartResponse item(@RequestBody DeleteFromCartRequest deleteFromCartRequest) {
         System.out.println("Postman Results: " + deleteFromCartRequest);
         var deleteFromCartResponse = new DeleteFromCartResponse();
-
-
         ResponseEntity<Integer> result = new ResponseEntity<Integer>(cartRepository.deleteFromCart(deleteFromCartRequest.getFoodId(), deleteFromCartRequest.getCustomerId()), HttpStatus.OK);
 
         System.out.println(result);
 
-        if((result.toString().equals("<200 OK OK,1,[]>"))){
+        String[] response = result.toString().split(",");
+
+        if(Integer.valueOf(response[1])>0){
             deleteFromCartResponse.setFoodId(deleteFromCartRequest.getFoodId());
             deleteFromCartResponse.setStatusMessage("The item is successfully delete from the cart.");
         }else{
