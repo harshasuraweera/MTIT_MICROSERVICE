@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface OrderStatusRepository extends CrudRepository<OrderStatus, Integer> {
-
+    //Query for update record of the orderstatus table
     @Modifying
     @Transactional
     @Query("update OrderStatus p set p.status =:status where p.orderId =:orderId")
