@@ -30,45 +30,49 @@ public class FoodDeliveryProcesseController {
         System.out.println("Processe Details: "+ DeliveryRequest);
         var deliveryresponse = new MarkAsProcesseResponse();
 
+        //Create a module and give values.
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setOrderId(DeliveryRequest.getOrderId());
         orderStatus.setStatus(DeliveryRequest.getStatus());
 
         try {
-
+            //For the save values to the DB use CrudRepository
             orderStatusRepository.save(orderStatus);
+            //set response values to deliveryresponse class
             deliveryresponse.setMessage("Successfully found the Delivery Processe..");
             deliveryresponse.setOrderId(DeliveryRequest.getOrderId());
             deliveryresponse.setStatus(DeliveryRequest.getStatus());
 
         }catch (Exception e){
+            //pass error message
             deliveryresponse.setMessage("There is an issue in the delivery processe...!!!");
         }
         return deliveryresponse;
     }
 
     @GetMapping(path = "/showOrder")
-    public ResponseEntity<List<PlaceOrder>> showOrderByDate(@RequestParam String keyword) {
-        return new ResponseEntity<List<PlaceOrder>>(placeOrderRepository.findByOrderDate(keyword), HttpStatus.OK);
+    public ResponseEntity<List<PlaceOrder>> showOrderByDate(@RequestParam String date) {
+        //use crudrepository to retrive order details by date
+        return new ResponseEntity<List<PlaceOrder>>(placeOrderRepository.findByOrderDate(date), HttpStatus.OK);
     }
 
     @PutMapping(path = "/updateDeliveryStatus", consumes = "application/json", produces = "application/json")
     public @ResponseBody MarkAsShippedResponse updateDeliveryStatus(@RequestBody MarkAsShippedRequest shippedRequest) {
 
         var shippedResponse = new MarkAsShippedResponse();
-
+        //For the update status of order_status table use custome overide methods
         ResponseEntity<Integer> result = new ResponseEntity<Integer>(orderStatusRepository.updateDeliveryStatus(shippedRequest.getStatus(), shippedRequest.getOrderId()), HttpStatus.OK);
-
+        //extract return values
         String[] response = result.toString().split(",");
 
-        if (Integer.parseInt(response[1]) > 0) {
-
+        if (Integer.parseInt(response[1]) > 0) {//update value
+            //set response values
             shippedResponse.setOrderId(shippedRequest.getOrderId());
             shippedResponse.setStatus(shippedRequest.getStatus());
-            shippedResponse.setMessage("Quantity has been updated successfully.");
+            shippedResponse.setMessage("Delivery status has been updated successfully.");
 
         } else {
-
+            //set error response
             shippedResponse.setOrderId(shippedRequest.getOrderId());
             shippedResponse.setStatus("Error");
             shippedResponse.setMessage("There is an issue in the delivery status update...!!!");

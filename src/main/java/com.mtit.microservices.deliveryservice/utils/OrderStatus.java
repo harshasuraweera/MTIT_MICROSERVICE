@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity // These tells Hibernate to make a table out of this class
+@Entity // These tells make a table out of this class
 public class OrderStatus {
 
     @Id
