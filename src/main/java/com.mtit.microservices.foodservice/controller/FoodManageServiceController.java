@@ -1,7 +1,13 @@
 //IT19207346 | Dissanayake N.H.N.N. | MTIT_MICROSERVICES ASSIGNMENT | G067
 package com.mtit.microservices.foodservice.controller;
 
-import com.mtit.microservices.foodservice.dtos.*;
+
+import com.mtit.microservices.foodservice.dtos.AddFoodRequest;
+import com.mtit.microservices.foodservice.dtos.AddFoodResponse;
+import com.mtit.microservices.foodservice.dtos.UpdateFoodRequest;
+import com.mtit.microservices.foodservice.dtos.UpdateFoodResponse;
+import com.mtit.microservices.foodservice.dtos.DeleteFoodRequest;
+import com.mtit.microservices.foodservice.dtos.DeleteFoodResponse;
 import com.mtit.microservices.foodservice.utils.Food;
 import com.mtit.microservices.foodservice.utils.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
